@@ -17,7 +17,7 @@ public class PrologEnd : MonoBehaviour
     void Update()
     {
         if (videoPlayer.isPaused)
-            NextScene(1);
+            NextScene(2);
     }
     public void NextScene(int i)
     {

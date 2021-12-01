@@ -159,7 +159,7 @@ public class Registration : MonoBehaviour
         text3.text = "Слушаю...";
         text0.text = name + ", выберите направление";
         answer = true;
-        smn.NextScene(2);
+        smn.NextScene(1);
     }
 
     // Update is called once per frame

@@ -123,7 +123,7 @@ public class FirstScene : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     private void OnTranscriptionResult(string obj)
