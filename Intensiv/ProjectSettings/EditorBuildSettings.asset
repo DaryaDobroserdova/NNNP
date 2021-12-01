@@ -6,15 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Registration.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/Prolog.unity
     guid: b0563b5e3cefd474dacbf375a948f25a
   - enabled: 1
-    path: Assets/Scenes/Registration.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Dolgi.unity
+    guid: eac6ccd96c5113c468a43bab00000ec6
   - enabled: 1
     path: Assets/Scenes/SelectPrepod.unity
     guid: 600c85b41ada7cd4dae15e728677cf69
   - enabled: 1
     path: Assets/Scenes/New.unity
     guid: fe6569dfec8f5c5439031aa5fcd89d02
+  - enabled: 1
+    path: Assets/Scenes/ClassmatesHelp.unity
+    guid: ddce82b30b4028844975c8d47144e688
+  - enabled: 1
+    path: Assets/Scenes/MakeAllSam.unity
+    guid: fbdf488de557feb4d865a80d3343f025
   m_configObjects: {}
