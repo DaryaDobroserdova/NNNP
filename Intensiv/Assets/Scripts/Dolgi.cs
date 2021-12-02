@@ -10,7 +10,7 @@ public class Dolgi : MonoBehaviour
     public Button btn, btn1;
     public Text t;
     private string sam = "сделать все самому";
-    private string help = "попросить помощи у одногруппников";
+    private string help = "попросить помощи у друзей";
     ScenesManager sm = new ScenesManager();
 
     private void Awake()
@@ -52,10 +52,10 @@ public class Dolgi : MonoBehaviour
                 MakeAll();
             if (p.Text == help && t.GetComponent<PrintedText>().textEnd)
                 Help();
-            if (result.Phrases.Length > 0 && result.Phrases[0].Text != "")
-            {
-                t.text = p.Text;
-            }
+            //if (result.Phrases.Length > 0 && result.Phrases[0].Text != "")
+            //{
+            //    t.text = p.Text;
+            //}
         }
     }
 }
