@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MakeAllSam.unity
     guid: fbdf488de557feb4d865a80d3343f025
+  - enabled: 1
+    path: Assets/Scenes/ConversationWithTheDean.unity
+    guid: 1dde3ade9d3ddc64c87c79147efd79e7
+  - enabled: 1
+    path: Assets/Scenes/KeepSilent.unity
+    guid: bc2367e6b33c85c46bdb06acd63d9dff
+  - enabled: 1
+    path: Assets/Scenes/Tell.unity
+    guid: a3eca75433b9f324c94fad6ec81a7b11
   m_configObjects: {}
