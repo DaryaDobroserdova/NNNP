@@ -6,22 +6,30 @@ using UnityEngine.UI;
 public class PrintedText : MonoBehaviour
 {
     public Text printedText;
-    private string text;
-    public bool textEnd = false;
+    public string text;
+    public bool textEnd = false, skip = false;
 
     IEnumerator TextPrinting()
     {
         foreach (char c in text)
         {
-            printedText.text += c;
-            yield return new WaitForSeconds(0.07f);
+            if (!textEnd && !skip)
+            {
+                printedText.text += c;
+                yield return new WaitForSeconds(0.07f);
+            }
+            else
+            {
+                textEnd = true;
+                printedText.text = text;
+                break;
+            }
         }
         textEnd = true;
     }
-
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         text = printedText.text;
         printedText.text = "";
         StartCoroutine(TextPrinting());
