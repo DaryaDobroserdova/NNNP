@@ -15,17 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Dolgi.unity
     guid: eac6ccd96c5113c468a43bab00000ec6
   - enabled: 1
-    path: Assets/Scenes/SelectPrepod.unity
-    guid: 600c85b41ada7cd4dae15e728677cf69
-  - enabled: 1
-    path: Assets/Scenes/New.unity
-    guid: fe6569dfec8f5c5439031aa5fcd89d02
-  - enabled: 1
     path: Assets/Scenes/ClassmatesHelp.unity
     guid: ddce82b30b4028844975c8d47144e688
   - enabled: 1
     path: Assets/Scenes/MakeAllSam.unity
     guid: fbdf488de557feb4d865a80d3343f025
+  - enabled: 1
+    path: Assets/Scenes/Bus.unity
+    guid: 4a10d2457b0b2434ab088e0e2fc5ee91
   - enabled: 1
     path: Assets/Scenes/ConversationWithTheDean.unity
     guid: 1dde3ade9d3ddc64c87c79147efd79e7
@@ -35,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tell.unity
     guid: a3eca75433b9f324c94fad6ec81a7b11
+  - enabled: 1
+    path: Assets/Scenes/SelectPrepod.unity
+    guid: 600c85b41ada7cd4dae15e728677cf69
+  - enabled: 1
+    path: Assets/Scenes/New.unity
+    guid: fe6569dfec8f5c5439031aa5fcd89d02
   m_configObjects: {}

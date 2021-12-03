@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class FirstScene : MonoBehaviour
 {
-    public Text text;
+    public Text t;
 
     public VoskSpeechToText VoskSpeechToText;
     private string change = "изменить";
@@ -26,6 +26,7 @@ public class FirstScene : MonoBehaviour
         VoskSpeechToText.OnTranscriptionResult += OnTranscriptionResult;
     }
 
+    
     public void Start()
     {
         if (PlayerPrefs.HasKey("CurrentCharacter"))
@@ -123,7 +124,7 @@ public class FirstScene : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(10);
     }
 
     private void OnTranscriptionResult(string obj)
