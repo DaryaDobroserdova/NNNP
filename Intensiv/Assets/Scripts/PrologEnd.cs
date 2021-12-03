@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -47,6 +48,8 @@ public class PrologEnd : MonoBehaviour
             }
         }
         else
+        {
             sm.NextScene(2);
+        }
     }
 }
