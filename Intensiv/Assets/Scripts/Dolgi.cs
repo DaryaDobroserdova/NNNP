@@ -27,6 +27,10 @@ public class Dolgi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            t.GetComponent<PrintedText>().skip = true;
+        }
         if (t.GetComponent<PrintedText>().textEnd)
         {
             btn.gameObject.SetActive(true);
@@ -36,12 +40,12 @@ public class Dolgi : MonoBehaviour
 
     public void MakeAll()
     {
-        sm.NextScene(6);
+        sm.NextScene(4);
     }
 
     public void Help()
     {
-        sm.NextScene(5);
+        sm.NextScene(3);
     }
     private void OnTranscriptionResult(string obj)
     {

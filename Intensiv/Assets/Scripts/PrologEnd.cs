@@ -12,7 +12,7 @@ public class PrologEnd : MonoBehaviour
     //public VideoPlayer videoPlayer;
     public List<GameObject> scenes;
     public Text podskazka;
-    int click;
+    private int click;
     ScenesManager sm = new ScenesManager();
     // Start is called before the first frame update
     void Start()
@@ -32,9 +32,10 @@ public class PrologEnd : MonoBehaviour
     public void Next()
     {
         click++;
-        if (scenes.Count > 1)
+
+        if (click % 2 == 0)
         {
-            if (click % 2 == 0)
+            if (scenes.Count > 1)
             {
                 scenes[0].SetActive(false);
                 scenes.RemoveAt(0);
@@ -42,14 +43,12 @@ public class PrologEnd : MonoBehaviour
                 podskazka.gameObject.SetActive(false);
             }
             else
-            {
-                scenes[0].GetComponent<PrintedText>().skip = true;
-                podskazka.gameObject.SetActive(true);
-            }
+                sm.NextScene(2);
         }
         else
         {
-            sm.NextScene(2);
+            scenes[0].GetComponent<PrintedText>().skip = true;
+            podskazka.gameObject.SetActive(true);
         }
     }
 }

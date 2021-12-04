@@ -15,7 +15,7 @@ public class FirstScene : MonoBehaviour
 
     public int i;
     public int currentCharacter;
-    public GameObject[] AllCharacter;
+    public Image[] AllCharacter;
     public GameObject ButtonToLeft;
     public GameObject ButtonToRight;
     public GameObject ButtonSelectCharacter;
@@ -39,7 +39,7 @@ public class FirstScene : MonoBehaviour
             PlayerPrefs.SetInt("CurrentCharacter", i);
         }
 
-        AllCharacter[i].SetActive(true);
+        AllCharacter[i].gameObject.SetActive(true);
 
         ButtonSelectCharacter.SetActive(false);
         TextSelectCharacter.SetActive(true);
@@ -64,9 +64,9 @@ public class FirstScene : MonoBehaviour
                 ButtonToLeft.SetActive(true);
             }
 
-            AllCharacter[i].SetActive(false);
+            AllCharacter[i].gameObject.SetActive(false);
             i++;
-            AllCharacter[i].SetActive(true);
+            AllCharacter[i].gameObject.SetActive(true);
 
             if (currentCharacter == i)
             {
@@ -91,9 +91,9 @@ public class FirstScene : MonoBehaviour
     {
         if (i < AllCharacter.Length)
         {
-            AllCharacter[i].SetActive(false);
+            AllCharacter[i].gameObject.SetActive(false);
             i--;
-            AllCharacter[i].SetActive(true);
+            AllCharacter[i].gameObject.SetActive(true);
             ButtonToRight.SetActive(true);
 
             if (currentCharacter == i)
