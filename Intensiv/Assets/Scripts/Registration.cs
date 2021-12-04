@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class Registration : MonoBehaviour
     public string name, gender, napr;
     public int age = -1;
     ScenesManager smn = new ScenesManager();
+
+    //StreamWriter sw = new StreamWriter(path: @"information.txt", true);
 
     Dictionary<string, int> ageSet = new Dictionary<string, int>();
 
@@ -105,6 +108,7 @@ public class Registration : MonoBehaviour
         if (name == "" && iF.text != "")
         {
             name = iF.text;
+            File.AppendAllText(path: @"information.txt", "Имя: " + name + "\r\n");
             s_name();
             iF.text = "";
             iF.contentType = InputField.ContentType.IntegerNumber;
@@ -112,6 +116,7 @@ public class Registration : MonoBehaviour
         if (name != "" && age == -1 && iF.text != "")
         {
             age = int.Parse(iF.text);
+            File.AppendAllText(path: @"information.txt", "Возраст: " + age + "\r\n");
             s_age();
             iF.gameObject.SetActive(false);
             tG.gameObject.SetActive(true);
@@ -120,6 +125,7 @@ public class Registration : MonoBehaviour
         {
             Toggle t = tG.ActiveToggles().FirstOrDefault();
             gender = t.GetComponentInChildren<Text>().text;
+            File.AppendAllText(path: @"information.txt", "Пол: " + gender + "\r\n");
             s_gender();
             tG.gameObject.SetActive(false);
             tG2.gameObject.SetActive(true);
@@ -128,6 +134,7 @@ public class Registration : MonoBehaviour
         {
             Toggle t = tG2.ActiveToggles().FirstOrDefault();
             napr = t.GetComponentInChildren<Text>().text;
+            File.AppendAllText(path: @"information.txt", "Направление: " + napr + "\r\n" + "\r\n");
             s_napr();
             tG2.gameObject.SetActive(false);
         }    
@@ -201,6 +208,7 @@ public class Registration : MonoBehaviour
                     if (p.Text == yes)
                     {
                         name = text3.text;
+                        File.AppendAllText(path: @"information.txt", "Имя: " + name + "\r\n");
                         s_name();
                         return;
                     }
@@ -235,6 +243,7 @@ public class Registration : MonoBehaviour
                     if (p.Text == yes)
                     {
                         age = int.Parse(text3.text);
+                        File.AppendAllText(path: @"information.txt", "Возраст: " + age + "\r\n");
                         s_age();
                         return;
                     }
@@ -269,6 +278,7 @@ public class Registration : MonoBehaviour
                     if (p.Text == yes)
                     {
                         gender = text3.text;
+                        File.AppendAllText(path: @"information.txt", "Пол: " + gender + "\r\n");
                         s_gender();
                         return;
                     }
@@ -303,6 +313,12 @@ public class Registration : MonoBehaviour
                     if (p.Text == IS || p.Text == IM || p.Text == IB)
                     {
                         napr = text3.text;
+                        if (p.Text == IS)
+                            File.AppendAllText(path: @"information.txt", "Направление: " + IS + "\r\n" + "\r\n");
+                        else if (p.Text == IM)
+                            File.AppendAllText(path: @"information.txt", "Направление: " + IM + "\r\n" + "\r\n");
+                        else if (p.Text == IB)
+                            File.AppendAllText(path: @"information.txt", "Направление: " + IB + "\r\n" + "\r\n");
                         s_napr();
                         return;
                     }
