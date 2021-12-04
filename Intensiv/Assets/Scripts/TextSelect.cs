@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Lecture : MonoBehaviour
+public class TextSelect : MonoBehaviour
 {
     public VoskSpeechToText VoskSpeechToText;
-    public Button d, a, p;
-    private string v_d = "выбрать дизайн";
-    private string v_a = "анализ информации";
-    private string v_p = "сделать прототип";
+    public Button g, b, p;
+    private string v_g = "зелёный";
+    private string v_b = "чёрный";
+    private string v_p = "фиолетовый";
     ScenesManager sm = new ScenesManager();
 
     private void Awake()
@@ -17,12 +17,12 @@ public class Lecture : MonoBehaviour
         VoskSpeechToText.OnTranscriptionResult += OnTranscriptionResult;
     }
 
-    public void D()
+    public void B()
     {
         sm.NextScene(8);
     }
 
-    public void A()
+    public void G()
     {
         sm.NextScene(8);
     }
@@ -37,10 +37,10 @@ public class Lecture : MonoBehaviour
         var result = new RecognitionResult(obj);
         foreach (RecognizedPhrase p in result.Phrases)
         {
-            if (p.Text == v_d)
-                D();
-            else if (p.Text == v_a)
-                A();
+            if (p.Text == v_b)
+                B();
+            else if (p.Text == v_g)
+                G();
             else if (p.Text == v_p)
                 P();
         }
