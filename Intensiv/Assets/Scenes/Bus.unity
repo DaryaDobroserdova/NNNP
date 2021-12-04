@@ -566,7 +566,6 @@ MonoBehaviour:
   - {fileID: 392284982}
   podskazka: {fileID: 2117101705}
   cvs: {fileID: 181167194}
-  click: 0
 --- !u!1 &340820642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,7 +1084,7 @@ GameObject:
   - component: {fileID: 988189208}
   m_Layer: 5
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: select
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

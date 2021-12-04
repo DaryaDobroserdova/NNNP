@@ -18,18 +18,16 @@ public class ClassmatesHelp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (t.GetComponent<PrintedText>().textEnd)
+            podskazka.gameObject.SetActive(true);
         if (Input.GetMouseButtonDown(0))
         {
             click++;
             t.GetComponent<PrintedText>().skip = true;
-            if (click % 2 == 0)
+            if (t.GetComponent<PrintedText>().textEnd)
             {
                 podskazka.gameObject.SetActive(false);
                 sm.NextScene(4);
-            }
-            else
-            {
-                podskazka.gameObject.SetActive(true);
             }
         }
     }

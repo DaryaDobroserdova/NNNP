@@ -10,7 +10,7 @@ public class Bus : MonoBehaviour
     public List<GameObject> scenes;
     public Text podskazka;
     public Canvas cvs;
-    public int click;
+    private int click;
     ScenesManager sm = new ScenesManager();
     private string v_57 = "пятьдесят седьмой";
     private string v_93 = "девяносто третий";
@@ -25,14 +25,21 @@ public class Bus : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(click != 1)
-                Next();
+            Next();
+            if (scenes[0].GetComponent<PrintedText>().textEnd)
+                podskazka.gameObject.SetActive(true);
         }
         if (scenes[0].GetComponent<PrintedText>().textEnd)
         {
-            btn57.gameObject.SetActive(true);
-            btn93.gameObject.SetActive(true);
-            btn94.gameObject.SetActive(true);
+            if (scenes[0].tag == "select")
+            {
+                btn57.gameObject.SetActive(true);
+                btn93.gameObject.SetActive(true);
+                btn94.gameObject.SetActive(true);
+                podskazka.gameObject.SetActive(false);
+            }
+            else
+                podskazka.gameObject.SetActive(true);
         }
     }
 
@@ -40,7 +47,7 @@ public class Bus : MonoBehaviour
     {
         click++;
 
-        if (click % 2 == 0)
+        if (scenes[0].GetComponent<PrintedText>().textEnd && scenes[0].tag != "select")
         {
             if (scenes.Count > 1)
             {
@@ -55,15 +62,18 @@ public class Bus : MonoBehaviour
         else
         {
             scenes[0].GetComponent<PrintedText>().skip = true;
-            if (click != 1)
-                podskazka.gameObject.SetActive(true);
+            //if (click != 1)
+            //    podskazka.gameObject.SetActive(true);
         }
     }
 
     public void num_bus()
     {
         cvs.GetComponent<VoskSpeechToText>().ToggleRecording();
-        Next();
+        scenes[0].SetActive(false);
+        scenes.RemoveAt(0);
+        scenes[0].SetActive(true);
+        podskazka.gameObject.SetActive(false);
     }
 
     private void OnTranscriptionResult(string obj)
