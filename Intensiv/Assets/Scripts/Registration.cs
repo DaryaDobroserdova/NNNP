@@ -13,7 +13,7 @@ public class Registration : MonoBehaviour
     public InputField iF;
     public VoskSpeechToText VoskSpeechToText;
     public ToggleGroup tG, tG2;
-    public Text text0, text2, text3;
+    public Text text0, text2, text3, text4;
     public Image img;
     //public bool isActive = true;
     private bool answer = false;
@@ -91,6 +91,56 @@ public class Registration : MonoBehaviour
         ageSet.Add("сорок восемь", 48);
         ageSet.Add("сорок девять", 49);
         ageSet.Add("пятьдесят", 50);
+        ageSet.Add("пятьдесят один", 51);
+        ageSet.Add("пятьдесят два", 52);
+        ageSet.Add("пятьдесят три", 53);
+        ageSet.Add("пятьдесят четыре", 54);
+        ageSet.Add("пятьдесят пять", 55);
+        ageSet.Add("пятьдесят шесть", 56);
+        ageSet.Add("пятьдесят семь", 57);
+        ageSet.Add("пятьдесят восемь", 58);
+        ageSet.Add("пятьдесят девять", 59);
+        ageSet.Add("шестьдесят", 60);
+        ageSet.Add("шестьдесят один", 61);
+        ageSet.Add("шестьдесят два", 62);
+        ageSet.Add("шестьдесят три", 63);
+        ageSet.Add("шестьдесят четыре", 64);
+        ageSet.Add("шестьдесят пять", 65);
+        ageSet.Add("шестьдесят шесть", 66);
+        ageSet.Add("шестьдесят семь", 67);
+        ageSet.Add("шестьдесят восемь", 68);
+        ageSet.Add("шестьдесят девять", 69);
+        ageSet.Add("семьдесят", 70);
+        ageSet.Add("семьдесят один", 71);
+        ageSet.Add("семьдесят два", 72);
+        ageSet.Add("семьдесят три", 73);
+        ageSet.Add("семьдесят четыре", 74);
+        ageSet.Add("семьдесят пять", 75);
+        ageSet.Add("семьдесят шесть", 76);
+        ageSet.Add("семьдесят семь", 77);
+        ageSet.Add("семьдесят восемь", 78);
+        ageSet.Add("семьдесят девять", 79);
+        ageSet.Add("восемьдесят", 80);
+        ageSet.Add("восемьдесят один", 81);
+        ageSet.Add("восемьдесят два", 82);
+        ageSet.Add("восемьдесят три", 83);
+        ageSet.Add("восемьдесят четыре", 84);
+        ageSet.Add("восемьдесят пять", 85);
+        ageSet.Add("восемьдесят шесть", 86);
+        ageSet.Add("восемьдесят семь", 87);
+        ageSet.Add("восемьдесят восемь", 88);
+        ageSet.Add("восемьдесят девять", 89);
+        ageSet.Add("девяносто", 90);
+        ageSet.Add("девяносто один", 91);
+        ageSet.Add("девяносто два", 92);
+        ageSet.Add("девяносто три", 93);
+        ageSet.Add("девяносто четыре", 94);
+        ageSet.Add("девяносто пять", 95);
+        ageSet.Add("девяносто шесть", 96);
+        ageSet.Add("девяносто семь", 97);
+        ageSet.Add("девяносто восемь", 98);
+        ageSet.Add("девяносто девять", 99);
+        ageSet.Add("сто", 100);
     }
 
     public void Change() 
@@ -101,6 +151,7 @@ public class Registration : MonoBehaviour
         iF.gameObject.SetActive(true);
         btn.gameObject.SetActive(false);
         btn2.gameObject.SetActive(true);
+        //Accept();
     }
 
     public void Accept()
@@ -280,6 +331,7 @@ public class Registration : MonoBehaviour
                         gender = text3.text;
                         File.AppendAllText(path: @"information.txt", "Пол: " + gender + "\r\n");
                         s_gender();
+                        text4.gameObject.SetActive(true);
                         return;
                     }
                     if (p.Text == no)

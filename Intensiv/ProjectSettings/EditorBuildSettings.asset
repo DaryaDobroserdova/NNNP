@@ -33,33 +33,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectPrepod.unity
     guid: 600c85b41ada7cd4dae15e728677cf69
   - enabled: 1
-    path: Assets/Scenes/New.unity
-    guid: fe6569dfec8f5c5439031aa5fcd89d02
-  - enabled: 1
     path: Assets/Scenes/K.Lecture.unity
     guid: 7d1782e5baa546f4c9a5ca85b01a81db
   - enabled: 1
     path: Assets/Scenes/K.Text.unity
     guid: 44e6f462de477cd40a1cfb90e4c05d14
   - enabled: 1
-    path: "Assets/Scenes/\u0421.Test.unity"
-    guid: 4c2e4f176d7b1c841ad3c02045486ece
-  - enabled: 1
     path: Assets/Scenes/P. Test.unity
-    guid: 2ba0cb861f0e8114bb5d656bc7664451
-  - enabled: 1
-    path: Assets/Scenes/Prepod.unity
-    guid: 62e734bfb0f84594d918317f42381d9e
-  - enabled: 1
-    path: "Assets/Scenes/\u0421.Text.unity"
-    guid: 7966f64678ea7c741acea5f84f51b396
+    guid: 715d53626567ab34ba432f1d817c3666
   - enabled: 1
     path: Assets/Scenes/B. Test.unity
-    guid: 7d8c54ac4f17cff4b848a0a6ec1c1656
+    guid: dd62f91dce8d2af4a850dd85ecef83b5
   - enabled: 1
     path: Assets/Scenes/G. Test.unity
     guid: 358cd3fb7a847744381f016e17e31514
-  - enabled: 1
-    path: "Assets/Scenes/\u0421.Lecture.unity"
-    guid: 0ea5375e787334049b3d18c484b3b5ef
   m_configObjects: {}
