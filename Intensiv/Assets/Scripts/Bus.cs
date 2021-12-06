@@ -10,7 +10,7 @@ public class Bus : MonoBehaviour
     public List<GameObject> scenes;
     public Text podskazka;
     public Canvas cvs;
-    private int click;
+    public Image img;
     ScenesManager sm = new ScenesManager();
     private string v_57 = "пятьдесят седьмой";
     private string v_93 = "девяносто третий";
@@ -25,9 +25,12 @@ public class Bus : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Next();
-            if (scenes[0].GetComponent<PrintedText>().textEnd)
-                podskazka.gameObject.SetActive(true);
+            if (!img.gameObject.activeSelf)
+            {
+                Next();
+                if (scenes[0].GetComponent<PrintedText>().textEnd)
+                    podskazka.gameObject.SetActive(true);
+            }
         }
         if (scenes[0].GetComponent<PrintedText>().textEnd)
         {
@@ -41,12 +44,12 @@ public class Bus : MonoBehaviour
             else
                 podskazka.gameObject.SetActive(true);
         }
+        if (cvs.GetComponent<VoskSpeechToText>()._running)
+            img.gameObject.SetActive(false);
     }
 
     public void Next()
     {
-        click++;
-
         if (scenes[0].GetComponent<PrintedText>().textEnd && scenes[0].tag != "select")
         {
             if (scenes.Count > 1)

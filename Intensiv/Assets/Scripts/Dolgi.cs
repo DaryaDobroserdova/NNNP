@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Dolgi : MonoBehaviour
@@ -9,6 +7,8 @@ public class Dolgi : MonoBehaviour
     public VoskSpeechToText VoskSpeechToText;
     public Button btn, btn1;
     public Text t;
+    public Image img;
+    public Canvas cvs;
     private string sam = "сделать все самому";
     private string help = "попросить помощи у друзей";
     ScenesManager sm = new ScenesManager();
@@ -29,13 +29,16 @@ public class Dolgi : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            t.GetComponent<PrintedText>().skip = true;
+            if (!img.gameObject.activeSelf)
+                t.GetComponent<PrintedText>().skip = true;
         }
         if (t.GetComponent<PrintedText>().textEnd)
         {
             btn.gameObject.SetActive(true);
             btn1.gameObject.SetActive(true);
         }
+        if (cvs.GetComponent<VoskSpeechToText>()._running)
+            img.gameObject.SetActive(false);
     }
 
     public void MakeAll()

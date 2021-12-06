@@ -9,217 +9,18 @@ using UnityEngine.UI;
 public class Registration : MonoBehaviour
 {
     public Canvas cvs;
-    public Button btn, btn2;
-    public InputField iF;
+    public Button btn;
     public VoskSpeechToText VoskSpeechToText;
-    public ToggleGroup tG, tG2;
-    public Text text0, text2, text3, text4;
     public Image img;
-    //public bool isActive = true;
     private bool answer = false;
-    public string name, gender, napr;
-    public int age = -1;
     ScenesManager smn = new ScenesManager();
 
-    //StreamWriter sw = new StreamWriter(path: @"information.txt", true);
-
-    Dictionary<string, int> ageSet = new Dictionary<string, int>();
-
-    string yes = "да";
-    string no = "нет";
-    string mn = "мужской";
-    string wn = "женский";
-    string IS = "информационные системы и технологии";
-    string IM = "информационные технологии в медиа индустрии";
-    string IB = "информационные технологии в бизнесе";
-
-    public string Name { get { return name; } }
-    public int Age { get { return age; } }
-    public string Gender { get { return gender; } }
-    public string Napr { get { return napr; } }
+    string yes = "начать игру";
 
     void Awake()
     {
         VoskSpeechToText.OnTranscriptionResult += OnTranscriptionResult;
-        ageSet.Add("один", 1);
-        ageSet.Add("два", 2);
-        ageSet.Add("три", 3);
-        ageSet.Add("четыре", 4);
-        ageSet.Add("пять", 5);
-        ageSet.Add("шесть", 6);
-        ageSet.Add("семь", 7);
-        ageSet.Add("восемь", 8);
-        ageSet.Add("девять", 9);
-        ageSet.Add("десять", 10);
-        ageSet.Add("одииннадцать", 11);
-        ageSet.Add("двенадцать", 12);
-        ageSet.Add("тринадцать", 13);
-        ageSet.Add("четырнадцать", 14);
-        ageSet.Add("пятнадцать", 15);
-        ageSet.Add("шестнадцать", 16);
-        ageSet.Add("семнадцать", 17);
-        ageSet.Add("восемнадцать", 18);
-        ageSet.Add("девятнадцать", 19);
-        ageSet.Add("двадцать", 20);
-        ageSet.Add("двадцать один", 21);
-        ageSet.Add("двадцать два", 22);
-        ageSet.Add("двадцать три", 23);
-        ageSet.Add("двадцать четыре", 24);
-        ageSet.Add("двадцать пять", 25);
-        ageSet.Add("двадцать шесть", 26);
-        ageSet.Add("двадцать семь", 27);
-        ageSet.Add("двадцать восемь", 28);
-        ageSet.Add("двадцать девять", 29);
-        ageSet.Add("тридцать", 30);
-        ageSet.Add("тридцать один", 31);
-        ageSet.Add("тридцать два", 32);
-        ageSet.Add("тридцать три", 33);
-        ageSet.Add("тридцать четыре", 34);
-        ageSet.Add("тридцать пять", 35);
-        ageSet.Add("тридцать шесть", 36);
-        ageSet.Add("тридцать семь", 37);
-        ageSet.Add("тридцать восемь", 38);
-        ageSet.Add("тридцать девять", 39);
-        ageSet.Add("сорок", 40);
-        ageSet.Add("сорок один", 41);
-        ageSet.Add("сорок два", 42);
-        ageSet.Add("сорок три", 43);
-        ageSet.Add("сорок четыре", 44);
-        ageSet.Add("сорок пять", 45);
-        ageSet.Add("сорок шесть", 46);
-        ageSet.Add("сорок семь", 47);
-        ageSet.Add("сорок восемь", 48);
-        ageSet.Add("сорок девять", 49);
-        ageSet.Add("пятьдесят", 50);
-        ageSet.Add("пятьдесят один", 51);
-        ageSet.Add("пятьдесят два", 52);
-        ageSet.Add("пятьдесят три", 53);
-        ageSet.Add("пятьдесят четыре", 54);
-        ageSet.Add("пятьдесят пять", 55);
-        ageSet.Add("пятьдесят шесть", 56);
-        ageSet.Add("пятьдесят семь", 57);
-        ageSet.Add("пятьдесят восемь", 58);
-        ageSet.Add("пятьдесят девять", 59);
-        ageSet.Add("шестьдесят", 60);
-        ageSet.Add("шестьдесят один", 61);
-        ageSet.Add("шестьдесят два", 62);
-        ageSet.Add("шестьдесят три", 63);
-        ageSet.Add("шестьдесят четыре", 64);
-        ageSet.Add("шестьдесят пять", 65);
-        ageSet.Add("шестьдесят шесть", 66);
-        ageSet.Add("шестьдесят семь", 67);
-        ageSet.Add("шестьдесят восемь", 68);
-        ageSet.Add("шестьдесят девять", 69);
-        ageSet.Add("семьдесят", 70);
-        ageSet.Add("семьдесят один", 71);
-        ageSet.Add("семьдесят два", 72);
-        ageSet.Add("семьдесят три", 73);
-        ageSet.Add("семьдесят четыре", 74);
-        ageSet.Add("семьдесят пять", 75);
-        ageSet.Add("семьдесят шесть", 76);
-        ageSet.Add("семьдесят семь", 77);
-        ageSet.Add("семьдесят восемь", 78);
-        ageSet.Add("семьдесят девять", 79);
-        ageSet.Add("восемьдесят", 80);
-        ageSet.Add("восемьдесят один", 81);
-        ageSet.Add("восемьдесят два", 82);
-        ageSet.Add("восемьдесят три", 83);
-        ageSet.Add("восемьдесят четыре", 84);
-        ageSet.Add("восемьдесят пять", 85);
-        ageSet.Add("восемьдесят шесть", 86);
-        ageSet.Add("восемьдесят семь", 87);
-        ageSet.Add("восемьдесят восемь", 88);
-        ageSet.Add("восемьдесят девять", 89);
-        ageSet.Add("девяносто", 90);
-        ageSet.Add("девяносто один", 91);
-        ageSet.Add("девяносто два", 92);
-        ageSet.Add("девяносто три", 93);
-        ageSet.Add("девяносто четыре", 94);
-        ageSet.Add("девяносто пять", 95);
-        ageSet.Add("девяносто шесть", 96);
-        ageSet.Add("девяносто семь", 97);
-        ageSet.Add("девяносто восемь", 98);
-        ageSet.Add("девяносто девять", 99);
-        ageSet.Add("сто", 100);
     }
-
-    public void Change() 
-    {
-        cvs.GetComponent<VoskSpeechToText>().ToggleRecording();
-        text2.gameObject.SetActive(false);
-        text3.gameObject.SetActive(false);
-        iF.gameObject.SetActive(true);
-        btn.gameObject.SetActive(false);
-        btn2.gameObject.SetActive(true);
-        //Accept();
-    }
-
-    public void Accept()
-    {
-        if (name == "" && iF.text != "")
-        {
-            name = iF.text;
-            File.AppendAllText(path: @"information.txt", "Имя: " + name + "\r\n");
-            s_name();
-            iF.text = "";
-            iF.contentType = InputField.ContentType.IntegerNumber;
-        }
-        if (name != "" && age == -1 && iF.text != "")
-        {
-            age = int.Parse(iF.text);
-            File.AppendAllText(path: @"information.txt", "Возраст: " + age + "\r\n");
-            s_age();
-            iF.gameObject.SetActive(false);
-            tG.gameObject.SetActive(true);
-        }
-        if (name != "" && age != -1 && gender == "")
-        {
-            Toggle t = tG.ActiveToggles().FirstOrDefault();
-            gender = t.GetComponentInChildren<Text>().text;
-            File.AppendAllText(path: @"information.txt", "Пол: " + gender + "\r\n");
-            s_gender();
-            tG.gameObject.SetActive(false);
-            tG2.gameObject.SetActive(true);
-        }
-        if (name != "" && age != -1 && gender != "" && napr == "")
-        {
-            Toggle t = tG2.ActiveToggles().FirstOrDefault();
-            napr = t.GetComponentInChildren<Text>().text;
-            File.AppendAllText(path: @"information.txt", "Направление: " + napr + "\r\n" + "\r\n");
-            s_napr();
-            tG2.gameObject.SetActive(false);
-        }    
-    }
-    void s_name() 
-    {
-        
-        btn.gameObject.SetActive(false);
-        text3.text = "Слушаю...";
-        text2.text = "Если я правильно распознал ваш возраст, скажите 'Да', если неправильно, и хотите перезаписать, скажите 'Нет'.";
-        text0.text = name + ", скажите свой возраст";
-        answer = false;
-    }
-    void s_age()
-    {
-        text3.text = "Слушаю...";
-        text2.text = "Если я правильно распознал ваш пол, скажите 'Да', если неправильно, и хотите перезаписать, скажите 'Нет'.";
-        text0.text = name + ", ваш пол";
-        answer = false;
-    }
-    void s_gender()
-    {
-        text3.text = "Слушаю...";
-        text0.text = name + ", выберите направление";
-        answer = true;
-    }
-    void s_napr()
-    {
-        text3.text = "Слушаю...";
-        text0.text = name + ", выберите направление";
-        answer = true;
-        smn.NextScene(1);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -233,163 +34,21 @@ public class Registration : MonoBehaviour
             cvs.GetComponent<VoskSpeechToText>().ToggleRecording();
             cvs.GetComponent<VoskSpeechToText>()._didInit = false;
         }*/
-        if (!cvs.GetComponent<VoskSpeechToText>()._running)
-            //text3.text = "Загрузка...";
-            img.gameObject.SetActive(true);
-        if (cvs.GetComponent<VoskSpeechToText>()._running)// && text3.text == "Загрузка...")
-            //text3.text = "";
+        if (cvs.GetComponent<VoskSpeechToText>()._running)
             img.gameObject.SetActive(false);
-        if (text3.text == "")
-            text3.text = "Слушаю...";
-        if (text3.text == "Слушаю...")
-            text2.gameObject.SetActive(false);
-        if (text3.text != "Слушаю...")
-            text2.gameObject.SetActive(true);
+    }
+    public void clck() 
+    {
+        smn.NextScene(1);
     }
     private void OnTranscriptionResult(string obj)
     {
         var result = new RecognitionResult(obj);
         foreach (RecognizedPhrase p in result.Phrases)
         {
-            //ИМЯ
-            if (name == "")
+            if (p.Text == yes)
             {
-                if (answer)
-                {
-                    if (p.Text == yes)
-                    {
-                        name = text3.text;
-                        File.AppendAllText(path: @"information.txt", "Имя: " + name + "\r\n");
-                        s_name();
-                        return;
-                    }
-                    if (p.Text == no)
-                    {
-                        text3.text = "Слушаю...";
-                        answer = false;
-                        return;
-                    }
-                }
-                else
-                {
-                    if (result.Phrases.Length > 0 && result.Phrases[0].Text != "")
-                    {
-                        text3.text = p.Text;
-                    }
-                    if (text3.text != "Слушаю...")
-                    {
-                        answer = true;
-                    }
-                    if (text3.text == "Слушаю...")
-                    {
-                        answer = false;
-                    }
-                }
-            }
-            //ВОЗРАСТ
-            if (name != "" && age == -1)
-            {
-                if (answer)
-                {
-                    if (p.Text == yes)
-                    {
-                        age = int.Parse(text3.text);
-                        File.AppendAllText(path: @"information.txt", "Возраст: " + age + "\r\n");
-                        s_age();
-                        return;
-                    }
-                    if (p.Text == no)
-                    {
-                        text3.text = "Слушаю...";
-                        answer = false;
-                        return;
-                    }
-                }
-                else
-                {
-                    if (result.Phrases.Length > 0 && result.Phrases[0].Text != "")
-                    {
-                        text3.text = ageSet[p.Text].ToString();
-                    }
-                    if (text3.text != "Слушаю...")
-                    {
-                        answer = true;
-                    }
-                    if (text3.text == "Слушаю...")
-                    {
-                        answer = false;
-                    }
-                }
-            }
-            //ПОЛ
-            if (name != "" && age != -1 && gender == "")
-            {
-                if (answer)
-                {
-                    if (p.Text == yes)
-                    {
-                        gender = text3.text;
-                        File.AppendAllText(path: @"information.txt", "Пол: " + gender + "\r\n");
-                        s_gender();
-                        text4.gameObject.SetActive(true);
-                        return;
-                    }
-                    if (p.Text == no)
-                    {
-                        text3.text = "Слушаю...";
-                        answer = false;
-                        return;
-                    }
-                }
-                else
-                {
-                    if (result.Phrases.Length > 0 && result.Phrases[0].Text != "" && (p.Text == mn || p.Text == wn))
-                    {
-                        text3.text = p.Text;
-                    }
-                    if (text3.text != "Слушаю...")
-                    {
-                        answer = true;
-                    }
-                    if (text3.text == "Слушаю...")
-                    {
-                        answer = false;
-                    }
-                }
-            }
-            //НАПРАВЛЕНИЕ
-            if (name != "" && age != -1 && gender != "" && napr == "")
-            {
-                if (answer)
-                {
-                    if (p.Text == IS || p.Text == IM || p.Text == IB)
-                    {
-                        napr = text3.text;
-                        if (p.Text == IS)
-                            File.AppendAllText(path: @"information.txt", "Направление: " + IS + "\r\n" + "\r\n");
-                        else if (p.Text == IM)
-                            File.AppendAllText(path: @"information.txt", "Направление: " + IM + "\r\n" + "\r\n");
-                        else if (p.Text == IB)
-                            File.AppendAllText(path: @"information.txt", "Направление: " + IB + "\r\n" + "\r\n");
-                        s_napr();
-                        return;
-                    }
-                }
-                else
-                {
-                    if (result.Phrases.Length > 0 && result.Phrases[0].Text != "")
-                    {
-                        text3.text = p.Text;
-                    }
-                    if (text3.text != "Слушаю...")
-                    {
-                        answer = true;
-                    }
-                    if (text3.text == "Слушаю...")
-                    {
-                        answer = false;
-                    }
-                }
+                clck();
             }
         }
     }

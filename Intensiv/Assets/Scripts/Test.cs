@@ -77,8 +77,8 @@ public class Test : MonoBehaviour
                 scenes[0].SetActive(true);
                 podskazka.gameObject.SetActive(false);
             }
-            else { }
-                //sm.NextScene(11);
+            else
+                sm.NextScene(0);
         }
         else
             scenes[0].GetComponent<PrintedText>().skip = true;

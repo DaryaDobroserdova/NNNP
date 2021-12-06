@@ -37,7 +37,8 @@ public class KeepSilent : MonoBehaviour
                 scenes[0].SetActive(true);
                 podskazka.gameObject.SetActive(false);
             }
-            
+            else
+                sm.NextScene(0);
         }
         else
             scenes[0].GetComponent<PrintedText>().skip = true;

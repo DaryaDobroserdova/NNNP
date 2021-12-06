@@ -20,6 +20,14 @@ public class FirstScene : MonoBehaviour
     public GameObject ButtonToRight;
     public GameObject ButtonSelectCharacter;
     public GameObject TextSelectCharacter;
+    public Image img;
+    public Canvas cvs;
+
+    private void Update()
+    {
+        if (cvs.GetComponent<VoskSpeechToText>()._running)
+            img.gameObject.SetActive(false);
+    }
 
     private void Awake()
     {
